@@ -22,7 +22,8 @@ jobs:
           result-bundle-path: 'TestResults/TestResults.xcresult'
 
       - name: Process Test Results
-        uses: kishikawakatsumi/xcresulttool@v1
+        uses: actions/upload-artifact@v4
         if: success() || failure()
         with:
+          name: TestResults
           path: TestResults/TestResults.xcresult
